@@ -12,7 +12,15 @@
         </div>
         <div class="card-body">
             
-            <form action="{{url('dashboard/add-category')}}" method="POST">
+            @if($errors->any())
+            <div class="alert alert-danger">
+                @foreach($errors->all() as $error)
+                <div>{{$error}}</div>
+                @endforeach
+            </div>
+            @endif
+
+            <form action="{{url('admin/add-category')}}" method="POST" enctype="multipart/form-data">
             
                 @csrf
                 <div class="mb-3">
