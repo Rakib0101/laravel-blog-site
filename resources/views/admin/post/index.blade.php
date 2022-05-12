@@ -4,12 +4,12 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Dashboard</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Category</li>
+                <li class="breadcrumb-item active">Posts</li>
             </ol>
     <div class="row">
         <div class="card">
             <div class="card-header">
-                <h5>View category <a href="{{url('admin/add-category')}}" class="btn btn-primary btn-sm float-end">Add Category</a></h5>
+                <h5>View category <a href="{{url('admin/add-post')}}" class="btn btn-primary btn-sm float-end">Add Post</a></h5>
             </div>
             <div class="acrd-body">
                 @if(session('status'))
@@ -27,8 +27,8 @@
                             <th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach ($post as $item)
+                    {{-- <tbody>
+                        @foreach ($category as $item)
                         <tr>
                             <td>{{$item->id}}</td>
                             <td>{{$item->name}}</td>
@@ -43,7 +43,7 @@
                             </td>
                         </tr>
                         @endforeach
-                    </tbody>
+                    </tbody> --}}
                 </table>
             </div>
         </div>

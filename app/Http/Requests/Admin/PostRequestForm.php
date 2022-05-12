@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryFormRequest extends FormRequest
+class PostRequestForm extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,6 +24,9 @@ class CategoryFormRequest extends FormRequest
     public function rules()
     {
         $rules= [
+            'category_id' =>[
+
+            ],
             'name'=> [
                 'required',
                 'string',
@@ -37,10 +40,8 @@ class CategoryFormRequest extends FormRequest
             'description'=> [
                 'required'
             ],
-            'image'=> [
-                'nullable',
-                'mimes:jpeg,png,jpg',
-                'max:2048'
+            'yt_iframe' =>[
+                'nullable'
             ],
             'meta_title'=> [
                 'required',
