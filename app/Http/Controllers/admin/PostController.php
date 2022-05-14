@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Admin\PostRequestForm;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -29,7 +30,7 @@ class PostController extends Controller
         $post = new post;
         $post->category_id = $data['category_id'];
         $post->name = $data['name'];
-        $post->slug = $data['slug'];
+        $post->slug = Str::slug($data['slug']);
         $post->description = $data['description'];
         $post->yt_iframe = $data['yt_iframe'];
 
@@ -58,7 +59,7 @@ class PostController extends Controller
         // return $data;
         $post = post::find($post_id);
         $post->name = $data['name'];
-        $post->slug = $data['slug'];
+        $post->slug = Str::slug($data['slug']);
         $post->description = $data['description'];
         $post->yt_iframe = $data['yt_iframe'];
 
