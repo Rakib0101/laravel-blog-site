@@ -35,7 +35,7 @@
 
                 <div class="mb-3">
                     <label for="">Description</label>
-                    <textarea type="text" name="description" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea type="text" name="description" class="form-control" id="my_summernote" cols="30" rows="10"></textarea>
                 </div>
 
                 <div class="mb-3">
@@ -51,7 +51,7 @@
 
                 <div class="mb-3">
                     <label for="">Meta Description</label>
-                    <textarea type="text" name="meta_description" class="form-control" rows="3"></textarea>
+                    <textarea type="text" name="meta_description" class="form-control" id="my_summernote" rows="3"></textarea>
                 </div>
 
                 <div class="mb-3">

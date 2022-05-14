@@ -25,7 +25,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="">Select Category</label>
-                    <select name="" id="" class="form-control">
+                    <select name="category_id" id="" class="form-control">
                         @foreach ($category as $item)
                             <option value="{{$item->id}}">{{$item->name}}</option>
                         @endforeach
@@ -43,7 +43,7 @@
 
                 <div class="mb-3">
                     <label for="">Description</label>
-                    <textarea type="text" name="description" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea type="text" id="my_summernote" name="description" id="my_summernote" class="form-control" cols="30" rows="10"></textarea>
                 </div>
 
                 <div class="mb-3">
@@ -59,7 +59,7 @@
 
                 <div class="mb-3">
                     <label for="">Meta Description</label>
-                    <textarea type="text" name="meta_description" class="form-control" rows="3"></textarea>
+                    <textarea type="text" name="meta_description" class="form-control" id="my_summernote" rows="3"></textarea>
                 </div>
 
                 <div class="mb-3">

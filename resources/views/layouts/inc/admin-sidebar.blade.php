@@ -19,18 +19,36 @@
                                     <a class="nav-link" href="{{ url('admin/add-category')}}">Add Category</a>
                                 </nav>
                             </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePost" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Post
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapsePost" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link collapsed" href="{{url('admin/post')}}">
                                         View All Posts
                                     </a>
                                     <a class="nav-link collapsed" href="{{url('admin/add-post')}}" >
                                         Add New Post
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError">
+                                        
+                                    </div>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUsers" aria-expanded="false" aria-controls="collapseUsers">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                User
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseUsers" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="{{url('admin/users')}}">
+                                        View All Users
+                                    </a>
+                                    <a class="nav-link collapsed" href="{{url('admin/add-user')}}" >
+                                        Add User
                                     </a>
                                     <div class="collapse" id="pagesCollapseError">
                                         

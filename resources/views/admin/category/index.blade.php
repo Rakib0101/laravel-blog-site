@@ -28,7 +28,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($post as $item)
+                        @foreach ($category as $item)
                         <tr>
                             <td>{{$item->id}}</td>
                             <td>{{$item->name}}</td>
@@ -45,6 +45,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div>{{$category->links()}}</div>
             </div>
         </div>
     </div>

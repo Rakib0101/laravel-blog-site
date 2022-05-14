@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostRequestForm extends FormRequest
+class UserRequestForm extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,6 @@ class PostRequestForm extends FormRequest
     public function rules()
     {
         $rules= [
-            'category_id' => [
-                'required',
-                'integer'
-            ],
             'name'=> [
                 'required',
                 'string',
@@ -66,5 +62,6 @@ class PostRequestForm extends FormRequest
         ];
 
         return $rules;
+    
     }
 }
