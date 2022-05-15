@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row">
-            @if($post)
+            
+            @if($post->count() > 0)
                 @foreach ($post as $postItem)
                     <div class="col-md-4">
                         <div class="card">
@@ -38,17 +39,19 @@
                                     <a href="/post/{{$postItem->slug}}}}" class="text-decoration-none">{{$postItem->name}}</a>
                                 </h2>
                                 <div class="blog-desc">
-                                    {!!$postItem->description!!}
+                                    {{ Str::limit(strip_tags($postItem->description), 100) }}
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
             @else
-            {{$post}}
-            <h2>Sorry, no post found for this category !</h2>
+            <h3 class="text-center text-danger mt-5">Sorry, no post found for this category !</h3>
             @endif
             
+        </div>
+        <div class="text-center">
+            {{$post->links()}}
         </div>
     </div>
 @endsection

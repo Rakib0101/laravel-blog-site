@@ -5,3 +5,13 @@
     cursor: pointer;
     line-height: 1.2;
 }
+.pagination{
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0px 100px !important;
+}
+.page-link{
+        border-radius: 50%;
+        margin: 0px 4px;
+        padding: 5px 12px !important;
+}

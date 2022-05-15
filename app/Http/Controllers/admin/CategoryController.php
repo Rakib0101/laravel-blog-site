@@ -64,7 +64,7 @@ class CategoryController extends Controller
         // return $data;
         $category = Category::find($category_id);
         $category->name = $data['name'];
-        $category->Str::slug($data['slug']);
+        $category->slug = Str::slug($data['slug']);
         $category->description = $data['description'];
 
         if($request->hasFile('image')){

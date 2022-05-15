@@ -3,9 +3,9 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link {{ Request::is('admin/dashboard') ? 'active': ''}}" href="{{ url('admin/dashboard')}}">
+                            <a class="nav-link {{ Request::is('/') ? 'active': ''}}" href="{{ url('/')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                Visit Website
                             </a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
                             <a class="nav-link collapsed {{ Request::is('admin/category') ? 'active': ''}}" href="{{url('admin/category')}}" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

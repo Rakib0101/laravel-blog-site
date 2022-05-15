@@ -60,14 +60,14 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         @php
                             $categories = App\Models\Category::where('navbar_status', '0')->where('status','0')->get();
                         @endphp
                         @foreach ($categories as $catItem)
                             <li class="nav-item">
-                                <a class="nav-link" href="/categories/{{$catItem->slug}}">{{$catItem->name}}</a>
+                                <a class="nav-link {{ Request::is('/categories/'.$catItem->slug) ? 'active': ''}}" href="/categories/{{$catItem->slug}}">{{$catItem->name}}</a>
                             </li>
                         @endforeach
                         
