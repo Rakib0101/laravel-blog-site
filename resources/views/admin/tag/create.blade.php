@@ -4,11 +4,11 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Dashboard</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Add Post</li>
+            <li class="breadcrumb-item active">Add Category</li>
         </ol>
     <div class="card">
         <div class="card-header">
-            <h1>Add Post</h1>
+            <h1>Add Category</h1>
         </div>
         <div class="card-body">
             
@@ -20,19 +20,11 @@
             </div>
             @endif
 
-            <form action="{{url('admin/add-post')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{url('admin/add-category')}}" method="POST" enctype="multipart/form-data">
             
                 @csrf
                 <div class="mb-3">
-                    <label for="">Select Category</label>
-                    <select name="category_id" id="" class="form-control">
-                        @foreach ($category as $item)
-                            <option value="{{$item->id}}">{{$item->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="">Post title</label>
+                    <label for="">Category Name</label>
                     <input type="text" name="name" class="form-control">
                 </div>
 
@@ -43,17 +35,12 @@
 
                 <div class="mb-3">
                     <label for="">Description</label>
-                    <textarea type="text" id="my_summernote" name="description" id="my_summernote" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea type="text" name="description" class="form-control" id="my_summernote" cols="30" rows="10"></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="">Image</label>
                     <input type="file" name="image" class="form-control">
-                </div>
-
-                <div class="mb-3">
-                    <label for="">Youtube Iframe Code</label>
-                    <input type="text" name="yt_iframe" class="form-control">
                 </div>
 
                 <h6>SEO tags</h6>
@@ -75,11 +62,16 @@
                 <h6>Status Mode</h6>
                 <div class="row mb-3">
                     <div class="col-md-3 col-6">
+                        <label for="">Navbar Status</label>
+                        <input type="checkbox" name="navbar_status" id="">
+                    </div>
+
+                    <div class="col-md-3 col-6">
                         <label for="">Status</label>
                         <input type="checkbox" name="status" id="">
                     </div>
                 </div>
-                <button type="submit" class="btn-primary btn">Save Post</button>
+                <button type="submit" class="btn-primary btn">Save Category</button>
             </form>
         </div>
     </div>

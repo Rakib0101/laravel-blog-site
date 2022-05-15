@@ -1,0 +1,7 @@
+.blog-title a{
+    text-decoration: none;
+    color: #2e52ac;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1.2;
+}

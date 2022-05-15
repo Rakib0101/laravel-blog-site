@@ -62,7 +62,12 @@ class PostRequestForm extends FormRequest
             ],
             'status'=> [
                 
-            ]
+            ],
+            'image'=> [
+                'nullable',
+                'mimes:jpeg,png,jpg',
+                'max:2048'
+            ],
         ];
 
         return $rules;

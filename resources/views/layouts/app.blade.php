@@ -18,10 +18,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -59,6 +61,10 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" 
+                                    href="{{ url('admin/dashboard') }}">
+                                        Admin Dashboard
+                                    </a>
+                                    <a class="dropdown-item" 
                                     href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
@@ -74,12 +80,13 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-
+        </nav> --}}
+        @include('layouts.inc.frontend-navbar')
         <main class="py-4">
             @yield('content')
         </main>
     </div>
-    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}" defer></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
 </body>
 </html>

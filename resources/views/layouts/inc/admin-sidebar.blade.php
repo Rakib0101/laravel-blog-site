@@ -52,6 +52,10 @@
                                     </div>
                                 </nav>
                             </div>
+                            <a class="nav-link {{ Request::is('admin/tags') ? 'active': ''}}" href="{{url('admin/tags')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tags
+                            </a>
                             <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>

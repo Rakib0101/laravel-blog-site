@@ -41,6 +41,13 @@ class PostController extends Controller
         $post->status = $request->status == true ? '1':'0';
         $post->created_by = Auth::user()->id;
 
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move('uploads/post/', $filename);
+            $post->image = $filename;
+        }
+
         $post->save();
 
         return redirect('admin/post')->with('status', 'post added successfully');
@@ -70,6 +77,19 @@ class PostController extends Controller
         $post->status = $request->status == true ? '1':'0';
         $post->created_by = Auth::user()->id;
 
+        if($request->hasFile('image')){
+
+            $destination = 'uploads/post/'.$post->image;
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+
+            $file = $request->file('image');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move('uploads/post/', $filename);
+            $post->image = $filename;
+        }
+
         $post->update();
 
         return redirect('admin/post')->with('status', 'post updated successfully');
@@ -78,20 +98,16 @@ class PostController extends Controller
     public function destroy($post_id)
     {
         $post = post::find($post_id);
-        // if($category){
-        //     $destination = 'uploads/category/'.$category->image;
-        //     if(File::exists($destination)){
-        //         File::delete($destination);
-        //     }
-        //     $category->delete();
-        //     return redirect('admin/category')->with('status', 'category deleted successfully');
-        // }
-        // else{
-        //     return redirect('admin/category')->with('status', 'no category found');
-        // }
-
+        if($post){
+            $destination = 'uploads/post/'.$post->image;
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
             $post->delete();
-
-        return redirect('admin/post')->with('status', 'post deleted successfully');
+            return redirect('admin/post')->with('status', 'post deleted successfully');
+        }
+        else{
+            return redirect('admin/post')->with('status', 'no post found');
+        }
     }
 }

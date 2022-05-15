@@ -48,6 +48,13 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="" class="d-block">Image</label>
+                    <div class="d-flex">
+                        <img src="{{asset('uploads/category/'.$post->image)}}" alt="" style=" width: 48px;"><input type="file" name="image" class="form-control">
+                    </div>
+                </div>
+
+                <div class="mb-3">
                     <label for="">Youtube Iframe Code</label>
                     <input type="text" name="yt_iframe" value="{{$post->yt_iframe}}" class="form-control">
                 </div>
